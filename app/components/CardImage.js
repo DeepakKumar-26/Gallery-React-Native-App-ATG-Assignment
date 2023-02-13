@@ -11,6 +11,8 @@ import {
 const {height, width} = Dimensions.get('window');
 
 function CardImage(props) {
+  if (!props.url) return null;
+
   return (
     <TouchableOpacity
       onPress={props.onPress}
@@ -19,7 +21,7 @@ function CardImage(props) {
       <Image
         style={styles.image}
         source={{
-          uri: props.source,
+          uri: props.url,
         }}
       />
     </TouchableOpacity>
